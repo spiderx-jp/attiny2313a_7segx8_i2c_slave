@@ -1,0 +1,835 @@
+
+attiny2313a_7segx8_i2c_slave.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000003b4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000012  00800060  000003b4  00000448  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000007  00800072  00800072  0000045a  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000045a  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000048c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000058  00000000  00000000  000004cc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000741  00000000  00000000  00000524  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000598  00000000  00000000  00000c65  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000532  00000000  00000000  000011fd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000114  00000000  00000000  00001730  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000040a  00000000  00000000  00001844  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000362  00000000  00000000  00001c4e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000048  00000000  00000000  00001fb0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	1b c0       	rjmp	.+54     	; 0x38 <__ctors_end>
+   2:	33 c0       	rjmp	.+102    	; 0x6a <__bad_interrupt>
+   4:	32 c0       	rjmp	.+100    	; 0x6a <__bad_interrupt>
+   6:	31 c0       	rjmp	.+98     	; 0x6a <__bad_interrupt>
+   8:	30 c0       	rjmp	.+96     	; 0x6a <__bad_interrupt>
+   a:	2f c0       	rjmp	.+94     	; 0x6a <__bad_interrupt>
+   c:	2e c0       	rjmp	.+92     	; 0x6a <__bad_interrupt>
+   e:	2d c0       	rjmp	.+90     	; 0x6a <__bad_interrupt>
+  10:	2c c0       	rjmp	.+88     	; 0x6a <__bad_interrupt>
+  12:	2b c0       	rjmp	.+86     	; 0x6a <__bad_interrupt>
+  14:	2a c0       	rjmp	.+84     	; 0x6a <__bad_interrupt>
+  16:	29 c0       	rjmp	.+82     	; 0x6a <__bad_interrupt>
+  18:	28 c0       	rjmp	.+80     	; 0x6a <__bad_interrupt>
+  1a:	98 c1       	rjmp	.+816    	; 0x34c <__vector_13>
+  1c:	26 c0       	rjmp	.+76     	; 0x6a <__bad_interrupt>
+  1e:	bb c0       	rjmp	.+374    	; 0x196 <__vector_15>
+  20:	d3 c0       	rjmp	.+422    	; 0x1c8 <__vector_16>
+  22:	23 c0       	rjmp	.+70     	; 0x6a <__bad_interrupt>
+  24:	22 c0       	rjmp	.+68     	; 0x6a <__bad_interrupt>
+  26:	21 c0       	rjmp	.+66     	; 0x6a <__bad_interrupt>
+  28:	20 c0       	rjmp	.+64     	; 0x6a <__bad_interrupt>
+  2a:	65 c0       	rjmp	.+202    	; 0xf6 <__stack+0x17>
+  2c:	66 c0       	rjmp	.+204    	; 0xfa <__stack+0x1b>
+  2e:	67 c0       	rjmp	.+206    	; 0xfe <__stack+0x1f>
+  30:	68 c0       	rjmp	.+208    	; 0x102 <__stack+0x23>
+  32:	69 c0       	rjmp	.+210    	; 0x106 <__stack+0x27>
+  34:	6a c0       	rjmp	.+212    	; 0x10a <__stack+0x2b>
+  36:	6b c0       	rjmp	.+214    	; 0x10e <__stack+0x2f>
+
+00000038 <__ctors_end>:
+  38:	11 24       	eor	r1, r1
+  3a:	1f be       	out	0x3f, r1	; 63
+  3c:	cf ed       	ldi	r28, 0xDF	; 223
+  3e:	cd bf       	out	0x3d, r28	; 61
+
+00000040 <__do_copy_data>:
+  40:	10 e0       	ldi	r17, 0x00	; 0
+  42:	a0 e6       	ldi	r26, 0x60	; 96
+  44:	b0 e0       	ldi	r27, 0x00	; 0
+  46:	e4 eb       	ldi	r30, 0xB4	; 180
+  48:	f3 e0       	ldi	r31, 0x03	; 3
+  4a:	02 c0       	rjmp	.+4      	; 0x50 <__do_copy_data+0x10>
+  4c:	05 90       	lpm	r0, Z+
+  4e:	0d 92       	st	X+, r0
+  50:	a2 37       	cpi	r26, 0x72	; 114
+  52:	b1 07       	cpc	r27, r17
+  54:	d9 f7       	brne	.-10     	; 0x4c <__do_copy_data+0xc>
+
+00000056 <__do_clear_bss>:
+  56:	20 e0       	ldi	r18, 0x00	; 0
+  58:	a2 e7       	ldi	r26, 0x72	; 114
+  5a:	b0 e0       	ldi	r27, 0x00	; 0
+  5c:	01 c0       	rjmp	.+2      	; 0x60 <.do_clear_bss_start>
+
+0000005e <.do_clear_bss_loop>:
+  5e:	1d 92       	st	X+, r1
+
+00000060 <.do_clear_bss_start>:
+  60:	a9 37       	cpi	r26, 0x79	; 121
+  62:	b2 07       	cpc	r27, r18
+  64:	e1 f7       	brne	.-8      	; 0x5e <.do_clear_bss_loop>
+  66:	95 d1       	rcall	.+810    	; 0x392 <main>
+  68:	a3 c1       	rjmp	.+838    	; 0x3b0 <_exit>
+
+0000006a <__bad_interrupt>:
+  6a:	ca cf       	rjmp	.-108    	; 0x0 <__vectors>
+
+0000006c <init_cpu>:
+ * Initialize CPU
+ ******************************************************************************/
+void init_cpu(void)
+{
+    // Clock Prescale Register
+    CLKPR = 0b10000000; // CLKPCE=enable,  CLKPS3,2,1,0=clear
+  6c:	80 e8       	ldi	r24, 0x80	; 128
+  6e:	86 bd       	out	0x26, r24	; 38
+    CLKPR = 0b00000011; // CLKPCE=disable, CLKPS3,2,1,0=0b0011(1/8)
+  70:	83 e0       	ldi	r24, 0x03	; 3
+  72:	86 bd       	out	0x26, r24	; 38
+
+    // Port Data Direction Register (7seg LED : Output)
+    DDRA  |= (_BV(DDA0) | _BV(DDA1) | _BV(DDA2));
+  74:	8a b3       	in	r24, 0x1a	; 26
+  76:	87 60       	ori	r24, 0x07	; 7
+  78:	8a bb       	out	0x1a, r24	; 26
+    DDRB  |= (_BV(DDB0) | _BV(DDB1) | _BV(DDB2) | _BV(DDB3) | _BV(DDB4)             | _BV(DDB6));
+  7a:	87 b3       	in	r24, 0x17	; 23
+  7c:	8f 65       	ori	r24, 0x5F	; 95
+  7e:	87 bb       	out	0x17, r24	; 23
+    DDRD  |= (_BV(DDD0) | _BV(DDD1) | _BV(DDD2) | _BV(DDD3) | _BV(DDD4) | _BV(DDD5) | _BV(DDD6));
+  80:	81 b3       	in	r24, 0x11	; 17
+  82:	8f 67       	ori	r24, 0x7F	; 127
+  84:	81 bb       	out	0x11, r24	; 17
+
+    // Port Data Register (7seg LED row switch : Active-Low)
+    PORTA |=  (_BV(PORTA0) | _BV(PORTA1) | _BV(PORTA2));
+  86:	8b b3       	in	r24, 0x1b	; 27
+  88:	87 60       	ori	r24, 0x07	; 7
+  8a:	8b bb       	out	0x1b, r24	; 27
+    PORTB |=  (_BV(PORTB0) | _BV(PORTB1) | _BV(PORTB2) | _BV(PORTB3) | _BV(PORTB4));
+  8c:	88 b3       	in	r24, 0x18	; 24
+  8e:	8f 61       	ori	r24, 0x1F	; 31
+  90:	88 bb       	out	0x18, r24	; 24
+
+    // Port Data Register (7seg LED column switch : Active-High)
+    PORTD &= ~(_BV(PORTD0) | _BV(PORTD1) | _BV(PORTD2) | _BV(PORTD3) | _BV(PORTD4) | _BV(PORTD5) | _BV(PORTD6));
+  92:	82 b3       	in	r24, 0x12	; 18
+  94:	80 78       	andi	r24, 0x80	; 128
+  96:	82 bb       	out	0x12, r24	; 18
+    PORTB &= ~_BV(PORTB6);
+  98:	c6 98       	cbi	0x18, 6	; 24
+
+    // Timer/Counter
+    TCCR0A = _BV(WGM01);        // Timer/Counter0 Control Register A
+  9a:	82 e0       	ldi	r24, 0x02	; 2
+  9c:	80 bf       	out	0x30, r24	; 48
+    TCCR0B = _BV(CS00);         // Timer/Counter0 Control Register B
+  9e:	81 e0       	ldi	r24, 0x01	; 1
+  a0:	83 bf       	out	0x33, r24	; 51
+    TCNT0 = 0;                  // Timer/Counter0
+  a2:	12 be       	out	0x32, r1	; 50
+    OCR0A = 233;                // Timer/Counter0 Output Compare A Register A
+  a4:	99 ee       	ldi	r25, 0xE9	; 233
+  a6:	96 bf       	out	0x36, r25	; 54
+                                //  => 8MHz/CLKPS(8)/CS(1)/223=4.48kHz (LED refresh is 560Hz)
+    OCR0B = 0;                  // Timer/Counter0 Output Compare B Register B
+  a8:	1c be       	out	0x3c, r1	; 60
+                                //  => don't use.
+    TIMSK = _BV(OCIE0A);        // Timer/Counter Interrupt Mask Register
+  aa:	89 bf       	out	0x39, r24	; 57
+  ac:	08 95       	ret
+
+000000ae <init_usi_twi_slave_mode>:
+/******************************************************************************
+ * Initialize USI for TWI Slave mode.
+ ******************************************************************************/
+void init_usi_twi_slave_mode(uint8_t addr) {
+
+    gTwiSlaveAddress = addr; /* store our address so we know when being addressed by master */
+  ae:	80 93 76 00 	sts	0x0076, r24	; 0x800076 <gTwiSlaveAddress>
+
+    PORT_USI |= (1 << PORT_USI_SCL);    // Set SCL high
+  b2:	c7 9a       	sbi	0x18, 7	; 24
+    PORT_USI |= (1 << PORT_USI_SDA);    // Set SDA high
+  b4:	c5 9a       	sbi	0x18, 5	; 24
+
+    DDR_USI |= (1 << PORT_USI_SCL);     // Set SCL as output
+  b6:	bf 9a       	sbi	0x17, 7	; 23
+    DDR_USI &= ~(1 << PORT_USI_SDA);    // Set SDA as input
+  b8:	bd 98       	cbi	0x17, 5	; 23
+
+    USICR = (1 << USISIE) | (0 << USIOIE) | // Enable Start Condition Interrupt. Disable Overflow Interrupt.
+  ba:	88 ea       	ldi	r24, 0xA8	; 168
+  bc:	8d b9       	out	0x0d, r24	; 13
+            (1 << USIWM1) | (0 << USIWM0) | // Set USI in Two-wire mode. No USI Counter overflow prior
+                                            // to first Start Condition (potential failure)
+            (1 << USICS1) | (0 << USICS0) | (0 << USICLK) | // Shift Register Clock Source = External, positive edge
+            (0 << USITC);
+
+    USISR = 0xF0; // Clear all flags and reset overflow counter
+  be:	80 ef       	ldi	r24, 0xF0	; 240
+  c0:	8e b9       	out	0x0e, r24	; 14
+  c2:	08 95       	ret
+
+000000c4 <disp_7seg_x8>:
+
+/******************************************************************************
+ * Display 7segment x8
+ ******************************************************************************/
+void disp_7seg_x8(const uint8_t column_data, const uint8_t row_data)
+{
+  c4:	e8 2f       	mov	r30, r24
+    uint8_t     data_porta;     // Port A data
+    uint8_t     data_portb;     // Port B data
+
+    data_porta = (row_data >> 5);
+  c6:	26 2f       	mov	r18, r22
+  c8:	22 95       	swap	r18
+  ca:	26 95       	lsr	r18
+  cc:	27 70       	andi	r18, 0x07	; 7
+    data_portb = (row_data & 0b00011111);
+  ce:	6f 71       	andi	r22, 0x1F	; 31
+
+    // Column All Off
+    PORTD &= ~(_BV(PD6) | _BV(PD5) | _BV(PD4) | _BV(PD3) | _BV(PD2) | _BV(PD1) | _BV(PD0));
+  d0:	82 b3       	in	r24, 0x12	; 18
+  d2:	80 78       	andi	r24, 0x80	; 128
+  d4:	82 bb       	out	0x12, r24	; 18
+    PORTB &= ~_BV(PB6);
+  d6:	c6 98       	cbi	0x18, 6	; 24
+
+    // Row All Off
+    PORTA |= _BV(PA0) | _BV(PA1) | _BV(PA2);
+  d8:	8b b3       	in	r24, 0x1b	; 27
+  da:	87 60       	ori	r24, 0x07	; 7
+  dc:	8b bb       	out	0x1b, r24	; 27
+    PORTB |= _BV(PB0) | _BV(PB1) | _BV(PB2) | _BV(PB3) | _BV(PB4);
+  de:	88 b3       	in	r24, 0x18	; 24
+  e0:	8f 61       	ori	r24, 0x1F	; 31
+  e2:	88 bb       	out	0x18, r24	; 24
+
+
+    // Column Switch On
+    switch(column_data)
+  e4:	8e 2f       	mov	r24, r30
+  e6:	90 e0       	ldi	r25, 0x00	; 0
+  e8:	87 30       	cpi	r24, 0x07	; 7
+  ea:	91 05       	cpc	r25, r1
+  ec:	90 f4       	brcc	.+36     	; 0x112 <__stack+0x33>
+  ee:	fc 01       	movw	r30, r24
+  f0:	eb 5e       	subi	r30, 0xEB	; 235
+  f2:	ff 4f       	sbci	r31, 0xFF	; 255
+  f4:	09 94       	ijmp
+    {
+        case 0:
+        PORTB |= _BV(PB6);
+  f6:	c6 9a       	sbi	0x18, 6	; 24
+        break;
+  f8:	0d c0       	rjmp	.+26     	; 0x114 <__stack+0x35>
+
+        case 1:
+        PORTD |= _BV(PD6);
+  fa:	96 9a       	sbi	0x12, 6	; 18
+        break;
+  fc:	0b c0       	rjmp	.+22     	; 0x114 <__stack+0x35>
+        
+        case 2:
+        PORTD |= _BV(PD5);
+  fe:	95 9a       	sbi	0x12, 5	; 18
+        break;
+ 100:	09 c0       	rjmp	.+18     	; 0x114 <__stack+0x35>
+
+        case 3:
+        PORTD |= _BV(PD4);
+ 102:	94 9a       	sbi	0x12, 4	; 18
+        break;
+ 104:	07 c0       	rjmp	.+14     	; 0x114 <__stack+0x35>
+
+        case 4:
+        PORTD |= _BV(PD3);
+ 106:	93 9a       	sbi	0x12, 3	; 18
+        break;
+ 108:	05 c0       	rjmp	.+10     	; 0x114 <__stack+0x35>
+
+        case 5:
+        PORTD |= _BV(PD2);
+ 10a:	92 9a       	sbi	0x12, 2	; 18
+        break;
+ 10c:	03 c0       	rjmp	.+6      	; 0x114 <__stack+0x35>
+
+        case 6:
+        PORTD |= _BV(PD1);
+ 10e:	91 9a       	sbi	0x12, 1	; 18
+        break;
+ 110:	01 c0       	rjmp	.+2      	; 0x114 <__stack+0x35>
+
+        default:            // led == 7
+        PORTD |= _BV(PD0);
+ 112:	90 9a       	sbi	0x12, 0	; 18
+        break;
+    }
+
+    // Set Row data
+    PORTA &= ~data_porta;
+ 114:	9b b3       	in	r25, 0x1b	; 27
+ 116:	82 2f       	mov	r24, r18
+ 118:	80 95       	com	r24
+ 11a:	89 23       	and	r24, r25
+ 11c:	8b bb       	out	0x1b, r24	; 27
+    PORTB &= ~data_portb;
+ 11e:	88 b3       	in	r24, 0x18	; 24
+ 120:	60 95       	com	r22
+ 122:	68 23       	and	r22, r24
+ 124:	68 bb       	out	0x18, r22	; 24
+ 126:	08 95       	ret
+
+00000128 <reflesh_disp>:
+
+/******************************************************************************
+ * Refresh 7segment x8 display
+ ******************************************************************************/
+void reflesh_disp(void)
+{
+ 128:	cf 93       	push	r28
+    static uint8_t      *ptr = gDisplayDataBuf; // Data register pointer
+
+    uint8_t             col;                    // Col Data
+    uint8_t             row;                    // Row Data
+
+    if((gDisplayDimmer != 0) && (count1 & gDisplayDimmer))
+ 12a:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <gDisplayDimmer>
+ 12e:	88 23       	and	r24, r24
+ 130:	21 f0       	breq	.+8      	; 0x13a <reflesh_disp+0x12>
+ 132:	90 91 75 00 	lds	r25, 0x0075	; 0x800075 <count1.1629>
+ 136:	89 23       	and	r24, r25
+ 138:	61 f4       	brne	.+24     	; 0x152 <reflesh_disp+0x2a>
+    {
+        row = 0x00;
+    }
+    else
+    {
+        row = *ptr;
+ 13a:	e0 91 60 00 	lds	r30, 0x0060	; 0x800060 <__data_start>
+ 13e:	f0 91 61 00 	lds	r31, 0x0061	; 0x800061 <__data_start+0x1>
+ 142:	60 81       	ld	r22, Z
+        if((count2 & 0x07) == 0)
+ 144:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <count2.1630>
+ 148:	87 70       	andi	r24, 0x07	; 7
+ 14a:	21 f4       	brne	.+8      	; 0x154 <reflesh_disp+0x2c>
+        {
+            row |= *(ptr + 8);
+ 14c:	80 85       	ldd	r24, Z+8	; 0x08
+ 14e:	68 2b       	or	r22, r24
+ 150:	01 c0       	rjmp	.+2      	; 0x154 <reflesh_disp+0x2c>
+    uint8_t             col;                    // Col Data
+    uint8_t             row;                    // Row Data
+
+    if((gDisplayDimmer != 0) && (count1 & gDisplayDimmer))
+    {
+        row = 0x00;
+ 152:	60 e0       	ldi	r22, 0x00	; 0
+        {
+            row |= *(ptr + 8);
+        }
+    }
+    
+    col = (count1 & 0x07);
+ 154:	c0 91 75 00 	lds	r28, 0x0075	; 0x800075 <count1.1629>
+    disp_7seg_x8(col, row);
+ 158:	8c 2f       	mov	r24, r28
+ 15a:	87 70       	andi	r24, 0x07	; 7
+ 15c:	b3 df       	rcall	.-154    	; 0xc4 <disp_7seg_x8>
+
+    count1++;
+ 15e:	cf 5f       	subi	r28, 0xFF	; 255
+ 160:	c0 93 75 00 	sts	0x0075, r28	; 0x800075 <count1.1629>
+    ptr++;
+
+    if((count1 & 0x07) == 0)
+ 164:	c7 70       	andi	r28, 0x07	; 7
+ 166:	51 f0       	breq	.+20     	; 0x17c <reflesh_disp+0x54>
+    
+    col = (count1 & 0x07);
+    disp_7seg_x8(col, row);
+
+    count1++;
+    ptr++;
+ 168:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__data_start>
+ 16c:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__data_start+0x1>
+ 170:	01 96       	adiw	r24, 0x01	; 1
+ 172:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__data_start+0x1>
+ 176:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__data_start>
+ 17a:	0b c0       	rjmp	.+22     	; 0x192 <reflesh_disp+0x6a>
+
+    if((count1 & 0x07) == 0)
+    {
+        ptr = gDisplayDataBuf;
+ 17c:	82 e6       	ldi	r24, 0x62	; 98
+ 17e:	90 e0       	ldi	r25, 0x00	; 0
+ 180:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__data_start+0x1>
+ 184:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__data_start>
+        count2++;
+ 188:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <count2.1630>
+ 18c:	8f 5f       	subi	r24, 0xFF	; 255
+ 18e:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <count2.1630>
+    }
+
+    return;
+}
+ 192:	cf 91       	pop	r28
+ 194:	08 95       	ret
+
+00000196 <__vector_15>:
+
+/******************************************************************************
+ * Detects the USI_TWI Start Condition and initialize the USI
+ * for reception of the "TWI Address" packet.
+ ******************************************************************************/
+ISR(USI_START_vect) {
+ 196:	1f 92       	push	r1
+ 198:	0f 92       	push	r0
+ 19a:	0f b6       	in	r0, 0x3f	; 63
+ 19c:	0f 92       	push	r0
+ 19e:	11 24       	eor	r1, r1
+ 1a0:	8f 93       	push	r24
+    uint8_t tmp_usisr;      // Temporary variable to store volatile
+    tmp_usisr = USISR;      // Not necessary, but prevents warnings
+ 1a2:	8e b1       	in	r24, 0x0e	; 14
+                            // Set default starting conditions for new TWI package
+
+    gTwiOverflowState = USI_SLAVE_CHECK_ADDRESS;
+ 1a4:	10 92 77 00 	sts	0x0077, r1	; 0x800077 <gTwiOverflowState>
+    DDR_USI &= ~(1 << PORT_USI_SDA);    // Set SDA as input
+ 1a8:	bd 98       	cbi	0x17, 5	; 23
+
+    while ((PIN_USI & (1 << PORT_USI_SCL)) && !(tmp_usisr & (1 << USIPF)))
+ 1aa:	80 72       	andi	r24, 0x20	; 32
+ 1ac:	b7 9b       	sbis	0x16, 7	; 22
+ 1ae:	02 c0       	rjmp	.+4      	; 0x1b4 <__vector_15+0x1e>
+ 1b0:	88 23       	and	r24, r24
+ 1b2:	e1 f3       	breq	.-8      	; 0x1ac <__vector_15+0x16>
+        ;   // Wait for SCL to go low to ensure the "Start Condition" has completed.
+            // If a Stop condition arises then leave the interrupt to prevent waiting forever.
+            //  SCL is High Level[(PIN_USI & (1 << PORT_USI_SCL))]
+            //  And SDA is Low Level[!(tmp_usisr & (1 << USIPF))]
+
+    USICR = (1 << USISIE) | // Keep START interrupt enabled
+ 1b4:	88 ef       	ldi	r24, 0xF8	; 248
+ 1b6:	8d b9       	out	0x0d, r24	; 13
+            (1 << USICS1) | // External positive edge shift register clock source
+            (0 << USICS0) | // External both edges counter clock source
+            (0 << USICLK) |
+            (0 << USITC);   // don't toggle clock pin
+
+    USISR = (1 << USISIF) | // Start condition detected
+ 1b8:	80 ef       	ldi	r24, 0xF0	; 240
+ 1ba:	8e b9       	out	0x0e, r24	; 14
+            (1 << USIOIF) | // Clear counter overflow interrupt flag
+            (1 << USIPF)  | // Clear STOP condition flag
+            (1 << USIDC)  | // Clear collision bit
+            (0 << USICNT0); // Set USI to sample 8 bits i.e. count 16 external pin toggles.
+
+}
+ 1bc:	8f 91       	pop	r24
+ 1be:	0f 90       	pop	r0
+ 1c0:	0f be       	out	0x3f, r0	; 63
+ 1c2:	0f 90       	pop	r0
+ 1c4:	1f 90       	pop	r1
+ 1c6:	18 95       	reti
+
+000001c8 <__vector_16>:
+
+/******************************************************************************
+ * Handles all the communication. Is disabled only when waiting
+ * for new Start Condition.
+ ******************************************************************************/
+ISR(USI_OVERFLOW_vect) {
+ 1c8:	1f 92       	push	r1
+ 1ca:	0f 92       	push	r0
+ 1cc:	0f b6       	in	r0, 0x3f	; 63
+ 1ce:	0f 92       	push	r0
+ 1d0:	11 24       	eor	r1, r1
+ 1d2:	8f 93       	push	r24
+ 1d4:	9f 93       	push	r25
+ 1d6:	ef 93       	push	r30
+ 1d8:	ff 93       	push	r31
+    static uint8_t is_data0 = FALSE;
+    static uint8_t disp_dp = 0;
+
+    uint8_t tmp_usidr;
+
+    switch (gTwiOverflowState) {
+ 1da:	80 91 77 00 	lds	r24, 0x0077	; 0x800077 <gTwiOverflowState>
+ 1de:	82 30       	cpi	r24, 0x02	; 2
+ 1e0:	09 f4       	brne	.+2      	; 0x1e4 <__vector_16+0x1c>
+ 1e2:	48 c0       	rjmp	.+144    	; 0x274 <__vector_16+0xac>
+ 1e4:	28 f4       	brcc	.+10     	; 0x1f0 <__vector_16+0x28>
+ 1e6:	88 23       	and	r24, r24
+ 1e8:	59 f0       	breq	.+22     	; 0x200 <__vector_16+0x38>
+ 1ea:	81 30       	cpi	r24, 0x01	; 1
+ 1ec:	81 f1       	breq	.+96     	; 0x24e <__vector_16+0x86>
+ 1ee:	a5 c0       	rjmp	.+330    	; 0x33a <__vector_16+0x172>
+ 1f0:	84 30       	cpi	r24, 0x04	; 4
+ 1f2:	09 f4       	brne	.+2      	; 0x1f6 <__vector_16+0x2e>
+ 1f4:	47 c0       	rjmp	.+142    	; 0x284 <__vector_16+0xbc>
+ 1f6:	18 f1       	brcs	.+70     	; 0x23e <__vector_16+0x76>
+ 1f8:	85 30       	cpi	r24, 0x05	; 5
+ 1fa:	09 f4       	brne	.+2      	; 0x1fe <__vector_16+0x36>
+ 1fc:	4a c0       	rjmp	.+148    	; 0x292 <__vector_16+0xca>
+ 1fe:	9d c0       	rjmp	.+314    	; 0x33a <__vector_16+0x172>
+        case USI_SLAVE_CHECK_ADDRESS:
+            // ---------- Address mode ----------
+            // Check address and send ACK (and next USI_SLAVE_SEND_DATA) if OK, else reset USI.
+            if ((USIDR == 0) || ((USIDR >> 1) == gTwiSlaveAddress)) {
+ 200:	8f b1       	in	r24, 0x0f	; 15
+ 202:	88 23       	and	r24, r24
+ 204:	31 f0       	breq	.+12     	; 0x212 <__vector_16+0x4a>
+ 206:	8f b1       	in	r24, 0x0f	; 15
+ 208:	86 95       	lsr	r24
+ 20a:	90 91 76 00 	lds	r25, 0x0076	; 0x800076 <gTwiSlaveAddress>
+ 20e:	89 13       	cpse	r24, r25
+ 210:	0e c0       	rjmp	.+28     	; 0x22e <__vector_16+0x66>
+                if (USIDR & 0x01) {
+ 212:	78 9b       	sbis	0x0f, 0	; 15
+ 214:	04 c0       	rjmp	.+8      	; 0x21e <__vector_16+0x56>
+                    // if the read bit is set then we are sending data
+                    gTwiOverflowState = USI_SLAVE_SEND_DATA;
+ 216:	81 e0       	ldi	r24, 0x01	; 1
+ 218:	80 93 77 00 	sts	0x0077, r24	; 0x800077 <gTwiOverflowState>
+ 21c:	03 c0       	rjmp	.+6      	; 0x224 <__vector_16+0x5c>
+                } else {
+                    // otherwise we will be receiving data
+                    gTwiOverflowState = USI_SLAVE_REQUEST_DATA;
+ 21e:	84 e0       	ldi	r24, 0x04	; 4
+ 220:	80 93 77 00 	sts	0x0077, r24	; 0x800077 <gTwiOverflowState>
+                }
+                SET_USI_TO_SEND_ACK();
+ 224:	1f b8       	out	0x0f, r1	; 15
+ 226:	bd 9a       	sbi	0x17, 5	; 23
+ 228:	8e e7       	ldi	r24, 0x7E	; 126
+ 22a:	8e b9       	out	0x0e, r24	; 14
+ 22c:	04 c0       	rjmp	.+8      	; 0x236 <__vector_16+0x6e>
+            } else {
+                SET_USI_TO_TWI_START_CONDITION_MODE();
+ 22e:	88 ea       	ldi	r24, 0xA8	; 168
+ 230:	8d b9       	out	0x0d, r24	; 13
+ 232:	80 e7       	ldi	r24, 0x70	; 112
+ 234:	8e b9       	out	0x0e, r24	; 14
+            }
+            is_data0 = TRUE;
+ 236:	81 e0       	ldi	r24, 0x01	; 1
+ 238:	80 93 73 00 	sts	0x0073, r24	; 0x800073 <is_data0.1648>
+            break;
+ 23c:	7e c0       	rjmp	.+252    	; 0x33a <__vector_16+0x172>
+
+        case USI_SLAVE_CHECK_REPLY_FROM_SEND_DATA:
+            // ----- Master write data mode ------
+            // Check reply and goto USI_SLAVE_SEND_DATA if OK, else reset USI.
+            if (USIDR) {
+ 23e:	8f b1       	in	r24, 0x0f	; 15
+ 240:	88 23       	and	r24, r24
+ 242:	29 f0       	breq	.+10     	; 0x24e <__vector_16+0x86>
+                SET_USI_TO_TWI_START_CONDITION_MODE();
+ 244:	88 ea       	ldi	r24, 0xA8	; 168
+ 246:	8d b9       	out	0x0d, r24	; 13
+ 248:	80 e7       	ldi	r24, 0x70	; 112
+ 24a:	8e b9       	out	0x0e, r24	; 14
+                return;
+ 24c:	76 c0       	rjmp	.+236    	; 0x33a <__vector_16+0x172>
+
+        case USI_SLAVE_SEND_DATA:
+            // Copy data from buffer to USIDR and set USI to shift byte.
+            // Next USI_SLAVE_REQUEST_REPLY_FROM_SEND_DATA
+
+            if (is_data0) {
+ 24e:	80 91 73 00 	lds	r24, 0x0073	; 0x800073 <is_data0.1648>
+ 252:	88 23       	and	r24, r24
+ 254:	51 f0       	breq	.+20     	; 0x26a <__vector_16+0xa2>
+                is_data0 = FALSE;
+ 256:	10 92 73 00 	sts	0x0073, r1	; 0x800073 <is_data0.1648>
+                USIDR = 0x00; // Dummy Data Set
+ 25a:	1f b8       	out	0x0f, r1	; 15
+                gTwiOverflowState = USI_SLAVE_REQUEST_REPLY_FROM_SEND_DATA;
+ 25c:	82 e0       	ldi	r24, 0x02	; 2
+ 25e:	80 93 77 00 	sts	0x0077, r24	; 0x800077 <gTwiOverflowState>
+                SET_USI_TO_SEND_DATA();
+ 262:	bd 9a       	sbi	0x17, 5	; 23
+ 264:	80 e7       	ldi	r24, 0x70	; 112
+ 266:	8e b9       	out	0x0e, r24	; 14
+ 268:	68 c0       	rjmp	.+208    	; 0x33a <__vector_16+0x172>
+
+            } else {
+                SET_USI_TO_TWI_START_CONDITION_MODE();
+ 26a:	88 ea       	ldi	r24, 0xA8	; 168
+ 26c:	8d b9       	out	0x0d, r24	; 13
+ 26e:	80 e7       	ldi	r24, 0x70	; 112
+ 270:	8e b9       	out	0x0e, r24	; 14
+ 272:	63 c0       	rjmp	.+198    	; 0x33a <__vector_16+0x172>
+            break;
+
+        case USI_SLAVE_REQUEST_REPLY_FROM_SEND_DATA:
+            // Set USI to sample reply from master.
+            // Next USI_SLAVE_CHECK_REPLY_FROM_SEND_DATA
+            gTwiOverflowState = USI_SLAVE_CHECK_REPLY_FROM_SEND_DATA;
+ 274:	83 e0       	ldi	r24, 0x03	; 3
+ 276:	80 93 77 00 	sts	0x0077, r24	; 0x800077 <gTwiOverflowState>
+            SET_USI_TO_READ_ACK();
+ 27a:	bd 98       	cbi	0x17, 5	; 23
+ 27c:	1f b8       	out	0x0f, r1	; 15
+ 27e:	8e e7       	ldi	r24, 0x7E	; 126
+ 280:	8e b9       	out	0x0e, r24	; 14
+            break;
+ 282:	5b c0       	rjmp	.+182    	; 0x33a <__vector_16+0x172>
+
+        case USI_SLAVE_REQUEST_DATA:
+            // ----- Master read data mode ------
+            // Set USI to sample data from master.
+            // Next USI_SLAVE_GET_DATA_AND_SEND_ACK.
+            gTwiOverflowState = USI_SLAVE_GET_DATA_AND_SEND_ACK;
+ 284:	85 e0       	ldi	r24, 0x05	; 5
+ 286:	80 93 77 00 	sts	0x0077, r24	; 0x800077 <gTwiOverflowState>
+            SET_USI_TO_READ_DATA();
+ 28a:	bd 98       	cbi	0x17, 5	; 23
+ 28c:	80 e7       	ldi	r24, 0x70	; 112
+ 28e:	8e b9       	out	0x0e, r24	; 14
+
+            break;
+ 290:	54 c0       	rjmp	.+168    	; 0x33a <__vector_16+0x172>
+
+        case USI_SLAVE_GET_DATA_AND_SEND_ACK:
+            // Copy data from USIDR and send ACK.
+            // Next USI_SLAVE_REQUEST_DATA
+            tmp_usidr               = USIDR;    // Not necessary, but prevents warnings
+ 292:	8f b1       	in	r24, 0x0f	; 15
+
+            if (is_data0) {
+ 294:	90 91 73 00 	lds	r25, 0x0073	; 0x800073 <is_data0.1648>
+ 298:	99 23       	and	r25, r25
+ 29a:	e9 f1       	breq	.+122    	; 0x316 <__vector_16+0x14e>
+                uint8_t cmd;
+                uint8_t prm;
+
+                is_data0 = FALSE;
+ 29c:	10 92 73 00 	sts	0x0073, r1	; 0x800073 <is_data0.1648>
+                cmd = tmp_usidr & 0b11110000;
+                prm = tmp_usidr & 0b00001111;
+ 2a0:	98 2f       	mov	r25, r24
+ 2a2:	9f 70       	andi	r25, 0x0F	; 15
+                switch (cmd) {
+ 2a4:	80 7f       	andi	r24, 0xF0	; 240
+ 2a6:	80 31       	cpi	r24, 0x10	; 16
+ 2a8:	39 f0       	breq	.+14     	; 0x2b8 <__vector_16+0xf0>
+ 2aa:	80 32       	cpi	r24, 0x20	; 32
+ 2ac:	51 f1       	breq	.+84     	; 0x302 <__vector_16+0x13a>
+ 2ae:	81 11       	cpse	r24, r1
+ 2b0:	3d c0       	rjmp	.+122    	; 0x32c <__vector_16+0x164>
+                    case 0x00:      // Set Address Command
+                        disp_dp = prm;
+ 2b2:	90 93 72 00 	sts	0x0072, r25	; 0x800072 <__data_end>
+                        break;
+ 2b6:	3a c0       	rjmp	.+116    	; 0x32c <__vector_16+0x164>
+
+                    case 0x10:      // Set Dimmer Command
+                        switch (prm) {
+ 2b8:	92 30       	cpi	r25, 0x02	; 2
+ 2ba:	99 f0       	breq	.+38     	; 0x2e2 <__vector_16+0x11a>
+ 2bc:	28 f4       	brcc	.+10     	; 0x2c8 <__vector_16+0x100>
+ 2be:	99 23       	and	r25, r25
+ 2c0:	49 f0       	breq	.+18     	; 0x2d4 <__vector_16+0x10c>
+ 2c2:	91 30       	cpi	r25, 0x01	; 1
+ 2c4:	51 f0       	breq	.+20     	; 0x2da <__vector_16+0x112>
+ 2c6:	32 c0       	rjmp	.+100    	; 0x32c <__vector_16+0x164>
+ 2c8:	94 30       	cpi	r25, 0x04	; 4
+ 2ca:	99 f0       	breq	.+38     	; 0x2f2 <__vector_16+0x12a>
+ 2cc:	70 f0       	brcs	.+28     	; 0x2ea <__vector_16+0x122>
+ 2ce:	95 30       	cpi	r25, 0x05	; 5
+ 2d0:	a1 f0       	breq	.+40     	; 0x2fa <__vector_16+0x132>
+ 2d2:	2c c0       	rjmp	.+88     	; 0x32c <__vector_16+0x164>
+                            case 0: gDisplayDimmer = 0x00;   break;
+ 2d4:	10 92 78 00 	sts	0x0078, r1	; 0x800078 <gDisplayDimmer>
+ 2d8:	29 c0       	rjmp	.+82     	; 0x32c <__vector_16+0x164>
+                            case 1: gDisplayDimmer = 0x08;   break;
+ 2da:	88 e0       	ldi	r24, 0x08	; 8
+ 2dc:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <gDisplayDimmer>
+ 2e0:	25 c0       	rjmp	.+74     	; 0x32c <__vector_16+0x164>
+                            case 2: gDisplayDimmer = 0x18;   break;
+ 2e2:	88 e1       	ldi	r24, 0x18	; 24
+ 2e4:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <gDisplayDimmer>
+ 2e8:	21 c0       	rjmp	.+66     	; 0x32c <__vector_16+0x164>
+                            case 3: gDisplayDimmer = 0x38;   break;
+ 2ea:	88 e3       	ldi	r24, 0x38	; 56
+ 2ec:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <gDisplayDimmer>
+ 2f0:	1d c0       	rjmp	.+58     	; 0x32c <__vector_16+0x164>
+                            case 4: gDisplayDimmer = 0x78;   break;
+ 2f2:	88 e7       	ldi	r24, 0x78	; 120
+ 2f4:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <gDisplayDimmer>
+ 2f8:	19 c0       	rjmp	.+50     	; 0x32c <__vector_16+0x164>
+                            case 5: gDisplayDimmer = 0xf8;   break;
+ 2fa:	88 ef       	ldi	r24, 0xF8	; 248
+ 2fc:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <gDisplayDimmer>
+ 300:	15 c0       	rjmp	.+42     	; 0x32c <__vector_16+0x164>
+                            default:                        break;
+                        }
+                        break;
+
+                    case 0x20:
+                        if (prm) {
+ 302:	99 23       	and	r25, r25
+ 304:	21 f0       	breq	.+8      	; 0x30e <__vector_16+0x146>
+                            TIMSK &= ~_BV(OCIE0A);	// Interrupt Disable
+ 306:	89 b7       	in	r24, 0x39	; 57
+ 308:	8e 7f       	andi	r24, 0xFE	; 254
+ 30a:	89 bf       	out	0x39, r24	; 57
+ 30c:	0f c0       	rjmp	.+30     	; 0x32c <__vector_16+0x164>
+                        } else {
+                            TIMSK |= _BV(OCIE0A);	// Interrupt Enable
+ 30e:	89 b7       	in	r24, 0x39	; 57
+ 310:	81 60       	ori	r24, 0x01	; 1
+ 312:	89 bf       	out	0x39, r24	; 57
+ 314:	0b c0       	rjmp	.+22     	; 0x32c <__vector_16+0x164>
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                gDisplayDataBuf[disp_dp] = tmp_usidr;   // Set Data
+ 316:	90 91 72 00 	lds	r25, 0x0072	; 0x800072 <__data_end>
+ 31a:	e9 2f       	mov	r30, r25
+ 31c:	f0 e0       	ldi	r31, 0x00	; 0
+ 31e:	ee 59       	subi	r30, 0x9E	; 158
+ 320:	ff 4f       	sbci	r31, 0xFF	; 255
+ 322:	80 83       	st	Z, r24
+                disp_dp = (disp_dp + 1) & 7;
+ 324:	9f 5f       	subi	r25, 0xFF	; 255
+ 326:	97 70       	andi	r25, 0x07	; 7
+ 328:	90 93 72 00 	sts	0x0072, r25	; 0x800072 <__data_end>
+
+            }
+
+            gTwiOverflowState = USI_SLAVE_REQUEST_DATA;
+ 32c:	84 e0       	ldi	r24, 0x04	; 4
+ 32e:	80 93 77 00 	sts	0x0077, r24	; 0x800077 <gTwiOverflowState>
+            SET_USI_TO_SEND_ACK();
+ 332:	1f b8       	out	0x0f, r1	; 15
+ 334:	bd 9a       	sbi	0x17, 5	; 23
+ 336:	8e e7       	ldi	r24, 0x7E	; 126
+ 338:	8e b9       	out	0x0e, r24	; 14
+            break;
+        
+        default:
+            break;
+    }
+}
+ 33a:	ff 91       	pop	r31
+ 33c:	ef 91       	pop	r30
+ 33e:	9f 91       	pop	r25
+ 340:	8f 91       	pop	r24
+ 342:	0f 90       	pop	r0
+ 344:	0f be       	out	0x3f, r0	; 63
+ 346:	0f 90       	pop	r0
+ 348:	1f 90       	pop	r1
+ 34a:	18 95       	reti
+
+0000034c <__vector_13>:
+
+
+ISR(TIMER0_COMPA_vect)
+{
+ 34c:	1f 92       	push	r1
+ 34e:	0f 92       	push	r0
+ 350:	0f b6       	in	r0, 0x3f	; 63
+ 352:	0f 92       	push	r0
+ 354:	11 24       	eor	r1, r1
+ 356:	2f 93       	push	r18
+ 358:	3f 93       	push	r19
+ 35a:	4f 93       	push	r20
+ 35c:	5f 93       	push	r21
+ 35e:	6f 93       	push	r22
+ 360:	7f 93       	push	r23
+ 362:	8f 93       	push	r24
+ 364:	9f 93       	push	r25
+ 366:	af 93       	push	r26
+ 368:	bf 93       	push	r27
+ 36a:	ef 93       	push	r30
+ 36c:	ff 93       	push	r31
+    reflesh_disp();
+ 36e:	dc de       	rcall	.-584    	; 0x128 <reflesh_disp>
+    return;
+}
+ 370:	ff 91       	pop	r31
+ 372:	ef 91       	pop	r30
+ 374:	bf 91       	pop	r27
+ 376:	af 91       	pop	r26
+ 378:	9f 91       	pop	r25
+ 37a:	8f 91       	pop	r24
+ 37c:	7f 91       	pop	r23
+ 37e:	6f 91       	pop	r22
+ 380:	5f 91       	pop	r21
+ 382:	4f 91       	pop	r20
+ 384:	3f 91       	pop	r19
+ 386:	2f 91       	pop	r18
+ 388:	0f 90       	pop	r0
+ 38a:	0f be       	out	0x3f, r0	; 63
+ 38c:	0f 90       	pop	r0
+ 38e:	1f 90       	pop	r1
+ 390:	18 95       	reti
+
+00000392 <main>:
+
+int main(void)
+{
+    init_cpu();
+ 392:	6c de       	rcall	.-808    	; 0x6c <init_cpu>
+    init_usi_twi_slave_mode(I2C_SLAVE_ADDR);  // 
+ 394:	89 e0       	ldi	r24, 0x09	; 9
+ 396:	8b de       	rcall	.-746    	; 0xae <init_usi_twi_slave_mode>
+
+    set_sleep_mode(SLEEP_MODE_IDLE);
+ 398:	85 b7       	in	r24, 0x35	; 53
+ 39a:	8f 7a       	andi	r24, 0xAF	; 175
+ 39c:	85 bf       	out	0x35, r24	; 53
+    sei();
+ 39e:	78 94       	sei
+
+    while (1) {
+        sleep_mode();
+ 3a0:	85 b7       	in	r24, 0x35	; 53
+ 3a2:	80 62       	ori	r24, 0x20	; 32
+ 3a4:	85 bf       	out	0x35, r24	; 53
+ 3a6:	88 95       	sleep
+ 3a8:	85 b7       	in	r24, 0x35	; 53
+ 3aa:	8f 7d       	andi	r24, 0xDF	; 223
+ 3ac:	85 bf       	out	0x35, r24	; 53
+ 3ae:	f8 cf       	rjmp	.-16     	; 0x3a0 <main+0xe>
+
+000003b0 <_exit>:
+ 3b0:	f8 94       	cli
+
+000003b2 <__stop_program>:
+ 3b2:	ff cf       	rjmp	.-2      	; 0x3b2 <__stop_program>

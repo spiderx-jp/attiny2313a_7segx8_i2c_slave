@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:/Users/spiderx/Documents/KiCad/7seg_led_x8_i2c/7seg_led_x8_i2c.sch</source>
+    <date>2017/08/05 12:28:47</date>
+    <tool>Eeschema 4.0.6</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>7seg_led_x8_i2c.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U1">
+      <value>NFD-3641</value>
+      <footprint>mylib:NFD-3641</footprint>
+      <libsource lib="mylib" part="NFD-3641"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DC977</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>NFD-3641</value>
+      <footprint>mylib:NFD-3641</footprint>
+      <libsource lib="mylib" part="NFD-3641"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DC9BE</tstamp>
+    </comp>
+    <comp ref="JP1">
+      <value>JP_8P</value>
+      <footprint>Connectors_JST:JST_PH_S8B-PH-K_08x2.00mm_Angled</footprint>
+      <libsource lib="mylib" part="JP_8P"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE044</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>ATTINY2313-20PU</value>
+      <footprint>Housings_DIP:DIP-20_W7.62mm</footprint>
+      <libsource lib="atmel" part="ATTINY2313-20PU"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE147</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>270</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE01E</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>270</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE256</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>270</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE298</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>270</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE2D9</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>270</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE48F</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>270</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE495</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>270</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE49B</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>270</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597DE4A1</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>0.1u</value>
+      <footprint>Capacitors_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597E4277</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="atmel" part="ATTINY2313-20PU">
+      <description>PDIP20, 2k Flash, 128B SRAM, 128B EEPROM, Debug Wire</description>
+      <docs>http://www.atmel.com/Images/doc2543.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ATTINY2313-20PU</field>
+        <field name="Footprint">Housings_DIP:DIP-20_W7.62mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="PA2(~RESET~/dW)" type="input"/>
+        <pin num="2" name="(RXD)PD0" type="BiDi"/>
+        <pin num="3" name="(TXD)PD1" type="BiDi"/>
+        <pin num="4" name="PA1(XTAL2)" type="input"/>
+        <pin num="5" name="PA0(XTAL1)" type="input"/>
+        <pin num="6" name="(CKOUT/XCK/INT0)PD2" type="BiDi"/>
+        <pin num="7" name="(INT1)PD3" type="BiDi"/>
+        <pin num="8" name="(T0)PD4" type="BiDi"/>
+        <pin num="9" name="(OC0B/T1)PD5" type="BiDi"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="(ICP)PD6" type="BiDi"/>
+        <pin num="12" name="(PCINT0/AIN0)PB0" type="BiDi"/>
+        <pin num="13" name="(PCINT1/AIN1)PB1" type="BiDi"/>
+        <pin num="14" name="(PCINT2/OC0A)PB2" type="BiDi"/>
+        <pin num="15" name="(PCINT3/OC1A)PB3" type="BiDi"/>
+        <pin num="16" name="(PCINT4/OC1B)PB4" type="BiDi"/>
+        <pin num="17" name="(PCINT5/MOSI/DI/SDA)PB5" type="BiDi"/>
+        <pin num="18" name="(PCINT6/MISO/DO)PB6" type="BiDi"/>
+        <pin num="19" name="(PCINT7/USCK/SCK/SCL)PB7" type="BiDi"/>
+        <pin num="20" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="mylib" part="JP_8P">
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">JP_8P</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+        <pin num="3" name="~" type="passive"/>
+        <pin num="4" name="~" type="passive"/>
+        <pin num="5" name="~" type="passive"/>
+        <pin num="6" name="~" type="passive"/>
+        <pin num="7" name="~" type="passive"/>
+        <pin num="8" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="mylib" part="NFD-3641">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">NFD-3641</field>
+      </fields>
+      <pins>
+        <pin num="1" name="E" type="passive"/>
+        <pin num="2" name="D" type="passive"/>
+        <pin num="3" name="DP" type="passive"/>
+        <pin num="4" name="C" type="passive"/>
+        <pin num="5" name="G" type="passive"/>
+        <pin num="6" name="DIG4_COM" type="passive"/>
+        <pin num="7" name="B" type="passive"/>
+        <pin num="8" name="DIG3_COM" type="passive"/>
+        <pin num="9" name="DIG2_COM" type="passive"/>
+        <pin num="10" name="F" type="passive"/>
+        <pin num="11" name="A" type="passive"/>
+        <pin num="12" name="DIG1_COM" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="device">
+      <uri>C:\Program Files\KiCad\share\kicad\library\device.lib</uri>
+    </library>
+    <library logical="atmel">
+      <uri>C:\Program Files\KiCad\share\kicad\library\atmel.lib</uri>
+    </library>
+    <library logical="mylib">
+      <uri>C:\Users\spiderx\Documents\KiCad\7seg_led_x8_i2c\mylib.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(JP1-Pad5)">
+      <node ref="JP1" pin="5"/>
+    </net>
+    <net code="2" name="Net-(JP1-Pad6)">
+      <node ref="JP1" pin="6"/>
+    </net>
+    <net code="3" name="Net-(JP1-Pad7)">
+      <node ref="JP1" pin="7"/>
+    </net>
+    <net code="4" name="Net-(JP1-Pad8)">
+      <node ref="JP1" pin="8"/>
+    </net>
+    <net code="5" name="+3V3">
+      <node ref="C1" pin="1"/>
+      <node ref="U3" pin="20"/>
+      <node ref="JP1" pin="4"/>
+    </net>
+    <net code="6" name="GND">
+      <node ref="JP1" pin="3"/>
+      <node ref="U3" pin="10"/>
+      <node ref="C1" pin="2"/>
+    </net>
+    <net code="7" name="Net-(JP1-Pad2)">
+      <node ref="U3" pin="17"/>
+      <node ref="JP1" pin="2"/>
+    </net>
+    <net code="8" name="Net-(U2-Pad12)">
+      <node ref="U3" pin="18"/>
+      <node ref="U2" pin="12"/>
+    </net>
+    <net code="9" name="Net-(U2-Pad9)">
+      <node ref="U3" pin="11"/>
+      <node ref="U2" pin="9"/>
+    </net>
+    <net code="10" name="Net-(U2-Pad8)">
+      <node ref="U2" pin="8"/>
+      <node ref="U3" pin="9"/>
+    </net>
+    <net code="11" name="Net-(U2-Pad6)">
+      <node ref="U3" pin="8"/>
+      <node ref="U2" pin="6"/>
+    </net>
+    <net code="12" name="Net-(U1-Pad12)">
+      <node ref="U3" pin="7"/>
+      <node ref="U1" pin="12"/>
+    </net>
+    <net code="13" name="Net-(U1-Pad9)">
+      <node ref="U3" pin="6"/>
+      <node ref="U1" pin="9"/>
+    </net>
+    <net code="14" name="Net-(U1-Pad8)">
+      <node ref="U1" pin="8"/>
+      <node ref="U3" pin="3"/>
+    </net>
+    <net code="15" name="Net-(U1-Pad6)">
+      <node ref="U3" pin="2"/>
+      <node ref="U1" pin="6"/>
+    </net>
+    <net code="16" name="Net-(JP1-Pad1)">
+      <node ref="JP1" pin="1"/>
+      <node ref="U3" pin="19"/>
+    </net>
+    <net code="17" name="Net-(R7-Pad1)">
+      <node ref="R7" pin="1"/>
+      <node ref="U1" pin="5"/>
+      <node ref="U2" pin="5"/>
+    </net>
+    <net code="18" name="Net-(R6-Pad1)">
+      <node ref="U1" pin="10"/>
+      <node ref="U2" pin="10"/>
+      <node ref="R6" pin="1"/>
+    </net>
+    <net code="19" name="Net-(R2-Pad1)">
+      <node ref="U2" pin="7"/>
+      <node ref="U1" pin="7"/>
+      <node ref="R2" pin="1"/>
+    </net>
+    <net code="20" name="Net-(R1-Pad1)">
+      <node ref="R1" pin="1"/>
+      <node ref="U1" pin="11"/>
+      <node ref="U2" pin="11"/>
+    </net>
+    <net code="21" name="Net-(R5-Pad1)">
+      <node ref="U2" pin="1"/>
+      <node ref="R5" pin="1"/>
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="22" name="Net-(R3-Pad1)">
+      <node ref="U2" pin="4"/>
+      <node ref="U1" pin="4"/>
+      <node ref="R3" pin="1"/>
+    </net>
+    <net code="23" name="Net-(R4-Pad1)">
+      <node ref="R4" pin="1"/>
+      <node ref="U1" pin="2"/>
+      <node ref="U2" pin="2"/>
+    </net>
+    <net code="24" name="Net-(R8-Pad1)">
+      <node ref="R8" pin="1"/>
+      <node ref="U2" pin="3"/>
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="25" name="/A">
+      <node ref="U3" pin="12"/>
+      <node ref="R1" pin="2"/>
+    </net>
+    <net code="26" name="/B">
+      <node ref="U3" pin="13"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="27" name="/C">
+      <node ref="U3" pin="14"/>
+      <node ref="R3" pin="2"/>
+    </net>
+    <net code="28" name="/D">
+      <node ref="R4" pin="2"/>
+      <node ref="U3" pin="15"/>
+    </net>
+    <net code="29" name="/E">
+      <node ref="U3" pin="16"/>
+      <node ref="R5" pin="2"/>
+    </net>
+    <net code="30" name="/F">
+      <node ref="U3" pin="5"/>
+      <node ref="R6" pin="2"/>
+    </net>
+    <net code="31" name="/G">
+      <node ref="U3" pin="4"/>
+      <node ref="R7" pin="2"/>
+    </net>
+    <net code="32" name="/DP">
+      <node ref="R8" pin="2"/>
+      <node ref="U3" pin="1"/>
+    </net>
+  </nets>
+</export>
